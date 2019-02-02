@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu>
+	<menu id="root-menu" label="OpenBox 3">
+		<item label="Web browser">
+			<action name="Execute">
+				<execute>firefox</execute>
+			</action>
+		</item>
+		<item label="File Manager">
+			<action name="Execute">
+				<execute>thunar</execute>
+			</action>
+		</item>
+		<item label="Terminal">
+			<action name="Execute">
+				<execute>lxterminal</execute>
+			</action>
+		</item>
+		<item label="Text Editor">
+			<action name="Execute">
+				<execute>leafpad</execute>
+			</action>
+		</item>
+		<item label="Steam">
+			<action name="Execute">
+				<execute>steam</execute>
+			</action>
+		</item>
+		<separator/>
+		<menu id="1" label="Development">
+			<item label="Geany">
+				<action name="Execute">
+					<execute>geany</execute>
+				</action>
+			</item>
+			<item label="LiteIDE">
+				<action name="Execute">
+					<execute>liteide</execute>
+				</action>
+			</item>
+			<item label="MonoDevelop">
+				<action name="Execute">
+					<execute>monodevelop</execute>
+				</action>
+			</item>
+			<item label="Qt Designer">
+				<action name="Execute">
+					<execute>/usr/lib/qt/bin/designer</execute>
+				</action>
+			</item>
+			<item label="Qt4 Designer">
+				<action name="Execute">
+					<execute>designer-qt4</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="2" label="Editors">
+			<item label="Atom">
+				<action name="Execute">
+					<execute>atom</execute>
+				</action>
+			</item>
+			<item label="Text Editor">
+				<action name="Execute">
+					<execute>leafpad</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="root-menu-66137" label="Games">
+			<item label="Minecraft">
+				<action name="Execute">
+					<execute>minecraft</execute>
+				</action>
+			</item>
+			<item label="Steam">
+				<action name="Execute">
+					<execute>/usr/bin/steam %U</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="6" label="Graphics">
+			<item label="KColorChooser">
+				<action name="Execute">
+					<execute>kcolorchooser</execute>
+				</action>
+			</item>
+			<item label="KolourPaint">
+				<action name="Execute">
+					<execute>kolourpaint</execute>
+				</action>
+			</item>
+			<item label="LibreOffice Draw">
+				<action name="Execute">
+					<execute>libreoffice --draw</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="7" label="Multimedia">
+			<item label="Cheese">
+				<action name="Execute">
+					<execute>cheese</execute>
+				</action>
+			</item>
+			<item label="OpenShot Video Editor">
+				<action name="Execute">
+					<execute>openshot</execute>
+				</action>
+			</item>
+			<item label="VLC media player">
+				<action name="Execute">
+					<execute>vlc</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="5" label="Network">
+			<item label="Chromium">
+				<action name="Execute">
+					<execute>chromium</execute>
+				</action>
+			</item>
+			<item label="Firefox">
+				<action name="Execute">
+					<execute>firefox</execute>
+				</action>
+			</item>
+			<item label="Transmission-GTK">
+				<action name="Execute">
+					<execute>transmission-gtk</execute>
+				</action>
+			</item>
+			<item label="Midori Private Browsing">
+				<action name="Execute">
+					<execute>midori</execute>
+				</action>
+			</item>
+			<item label="Otter Browser">
+				<action name="Execute">
+					<execute>otter-browser</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="3" label="Office">
+			<item label="Document Viewer">
+				<action name="Execute">
+					<execute>evince</execute>
+				</action>
+			</item>
+			<item label="LibreOffice Calc">
+				<action name="Execute">
+					<execute>libreoffice --calc</execute>
+				</action>
+			</item>
+			<item label="LibreOffice Impress">
+				<action name="Execute">
+					<execute>libreoffice</execute>
+				</action>
+			</item>
+			<item label="LibreOffice Impress">
+				<action name="Execute">
+					<execute>libreoffice --impress</execute>
+				</action>
+			</item>
+			<item label="LibreOffice Math">
+				<action name="Execute">
+					<execute>libreoffice --math</execute>
+				</action>
+			</item>
+			<item label="LibreOffice Writer">
+				<action name="Execute">
+					<execute>libreoffice --writer</execute>
+				</action>
+			</item>
+			<item label="Okular">
+				<action name="Execute">
+					<execute>okular</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="19" label="Other">
+			<item label="Oracle VM VirtualBox">
+				<action name="Execute">
+					<execute>VirtualBox</execute>
+				</action>
+			</item>
+			<item label="PCManFM File Manager">
+				<action name="Execute">
+					<execute>pcmanfm-qt</execute>
+				</action>
+			</item>
+			<item label="Guake">
+				<action name="Execute">
+					<execute>guake</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="38" label="Utilities">
+			<item label="Thunar">
+				<action name="Execute">
+					<execute>thunar</execute>
+				</action>
+			</item>
+			<item label="Task Manager">
+				<action name="Execute">
+					<execute>lxtask</execute>
+				</action>
+			</item>
+			<item label="Xkill">
+				<action name="Execute">
+					<execute>xkill</execute>
+				</action>
+			</item>
+			<item label="Screenshot">
+				<action name="Execute">
+					<execute>scrot -d 3</execute>
+				</action>
+			</item>
+		</menu>
+		<separator/>
+		<menu id="40" label="OpenBox">
+			<item label="Lxappearance">
+				<action name="Execute">
+					<execute>lxappearance</execute>
+				</action>
+			</item>
+			<item label="Obkey">
+				<action name="Execute">
+					<execute>obkey</execute>
+				</action>
+			</item>
+			<item label="Obconf">
+				<action name="Execute">
+					<execute>obconf</execute>
+				</action>
+			</item>
+			<item label="Obmenu">
+				<action name="Execute">
+					<execute>obmenu</execute>
+				</action>
+			</item>
+			<item label="Reconfigure">
+				<action name="Reconfigure"/>
+			</item>
+			<separator/>
+			<item label="Sleep">
+				<action name="Execute">
+					<execute>systemctl suspend</execute>
+				</action>
+			</item>
+			<item label="Shutdown">
+				<action name="Execute">
+					<execute>systemctl poweroff</execute>
+				</action>
+			</item>
+			<item label="Reboot">
+				<action name="Execute">
+					<execute>systemctl reboot</execute>
+				</action>
+			</item>
+			<item label="Exit">
+				<action name="Exit"/>
+			</item>
+		</menu>
+	</menu>
+</openbox_menu>

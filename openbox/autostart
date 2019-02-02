@@ -1,0 +1,11 @@
+xset -b
+nitrogen --restore
+lxpolkit &
+udiskie -2 -s &
+nm-applet &
+volti &
+bash /home/$USER/.conky.sh &
+tint2 &
+compton &
+notify-osd &
+clipit &
