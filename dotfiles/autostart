@@ -1,3 +1,0 @@
-# Terminal Info 
-neofetch
-mount | grep "/mnt/GoogleDrive" >/dev/null || /usr/bin/google-drive-ocamlfuse "/mnt/GoogleDrive"
