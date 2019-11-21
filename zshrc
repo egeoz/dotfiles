@@ -1,20 +1,14 @@
-# ZSH settings
-autoload -U compinit promptinit
-compinit
-promptinit
-setxkbmap tr
+# .ZSHRC
 
-# Theme
-prompt clint
+export ZSH="$HOME/.oh-my-zsh"
 
-# Aliases
-source /home/$USER/.dotfiles/aliases
+ZSH_THEME="robbyrussell"
 
-# Defaults
-#source /home/$USER/.dotfiles/defaults
+plugins=(git command-not-found)
 
-# Autostart
-source /home/$USER/.dotfiles/autostart
 
-# Extra functions
-source /home/$USER/.dotfiles/functions
+
+source $ZSH/oh-my-zsh.sh
+source $HOME/.dotfiles/aliases.sh
+source $HOME/.dotfiles/autostart.sh
+source $HOME/.dotfiles/functions.sh
