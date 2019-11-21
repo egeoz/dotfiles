@@ -1,5 +1,5 @@
 #!/bin/bash
 killall conky
 sleep 1
-conky -c /home/$USER/.dotfiles/conkyrc
+conky -c $HOME/.dotfiles/conky/conkyrc
 
