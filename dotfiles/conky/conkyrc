@@ -1,0 +1,112 @@
+out_to_x no
+own_window no
+out_to_console yes
+background no
+use_xft yes
+xftfont 123:size=11
+xftalpha 0.5
+update_interval 3
+total_run_times 0
+own_window_class Conky
+own_window_type override 
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager  
+own_window_transparent yes
+own_window_argb_visual yes
+own_window_argb_value 180
+double_buffer yes
+#default_bar_size 0 6
+ 
+maximum_width 296
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color white
+default_shade_color red
+default_outline_color green
+alignment top_right
+gap_x 40
+#gap_y 230
+gap_y 80
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 2
+override_utf8_locale yes
+use_spacer no
+ 
+TEXT
+
+#${alignc -10}${font Open Sans:size=20}${color orange}Parrot   ${color}
+${voffset 4}$color${font}${font Open Sans:size=15}$alignr${voffset -15}${time %H:%M}$font
+${voffset -4}${color orange}${font Open Sans:Bold:size=10}DATE ${hr 5}$color$font
+$color${font Open Sans:size=12}$alignc${time %A}, ${time %d %B %Y}$font$color
+
+# SYS
+${voffset -8}${font Open Sans:Bold:size=10}${color orange}SYSTEM ${hr 5}$color${font}
+$sysname $kernel $alignr $machine
+Uptime: $alignr $uptime
+#Last System Update:$alignr${execi 60 sh ~/bin/pacman-date.sh}
+# GPU Temperature $alignr ${execi 30 sensors | grep 'temp1:' | cut -c16-17}°C
+
+# MEMORY
+${voffset -8}${font Open Sans:Bold:size=10}${color orange}MEMORY ${membar 4} 
+$color${font Open Sans:size=8}Used:$font $mem of $memmax$alignr$memperc%
+
+${voffset -10}------------------------------------ ${font Open Sans:Bold:size=10}${color orange}${voffset -2}RAM${color}${font}${voffset -1} ----- ${font Open Sans:Bold:size=10}${color orange}${voffset -2}CPU${color}${font}--${voffset -1}
+${top_mem name 1}${alignr}${top_mem cpu 1} %
+${voffset -18}${alignr}${offset -60}${top_mem mem 1} %
+${top_mem name 2}${alignr}${top_mem cpu 2} %
+${voffset -18}${alignr}${offset -60}${top_mem mem 2} %
+${top_mem name 3}${alignr}${top_mem cpu 3} %
+${voffset -18}${alignr}${offset -60}${top_mem mem 3} %
+#${top_mem name 4}${alignr}${top_mem cpu 4} %
+#${voffset -18}${alignr}${offset -60}${top_mem mem 4} %
+
+${voffset -8}${font Open Sans:Bold:size=10}${color orange}SWAP ${swapbar 4}
+$color${font Open Sans:size=8}Used:$font $swap of $swapmax$alignr$swapperc%
+$color${font Open Sans:size=8}Free:$font $swapfree
+
+# CPU
+${voffset -8}${font Open Sans:Bold:size=10}${color orange}CPU ${cpubar 4}
+$color${font}Intel® Core™ i3-2348M @ ${freq_g cpu0}GHz $alignr $cpu% @ ${execi 2 sensors | sgrep 'Physical id 0' | cut -c18-19}°C
+${font}Core 0 - ${exec sensors | grep "Core 0" | cut -c17-19}°C ${alignc 60}${color orange}${cpubar cpu1}${color}
+${font}Core 1 - ${exec sensors | grep "Core 1" | cut -c17-19}°C ${alignc 60}${color orange}${cpubar cpu2}${color}
+${font}Core 2 - ${exec sensors | grep "Core 0" | cut -c17-19}°C ${alignc 60}${color orange}${cpubar cpu3}${color}
+${font}Core 3 - ${exec sensors | grep "Core 1" | cut -c17-19}°C ${alignc 60}${color orange}${cpubar cpu4}${color}
+
+${voffset -10}------------------------------------ ${font Open Sans:Bold:size=10}${color orange}${voffset -2}RAM${color}${font}${voffset -1} ----- ${font Open Sans:Bold:size=10}${color orange}${voffset -2}CPU${color}${font}--${voffset -1}
+#${hr 1}
+${top name 1}${alignr}${top cpu 1} %
+${voffset -18}${alignr}${offset -60}${top mem 1} %
+${top name 2}${alignr}${top cpu 2} %
+${voffset -18}${alignr}${offset -60}${top mem 2} %
+${top name 3}${alignr}${top cpu 3} %
+${voffset -18}${alignr}${offset -60}${top mem 3} %
+#${top name 4}${alignr}${top cpu 4} %
+#${voffset -18}${alignr}${offset -60}${top mem 4} %
+# ${top name 5}${alignr}${top cpu 5} %
+# ${voffset -18}${alignr}${offset -60}${top mem 5} %
+
+# NETWORK
+${voffset -8}${font Noto Sans:Bold:size=10}${color orange}NETWORK ${hr 5}
+
+$font${voffset -10}${font Noto Sans:bold:size=8}WiFi $font${wireless_bitrate wlx503eaaab9391} $alignr ${addr wlx503eaaab9391}
+$alignc${wireless_link_bar 4,260 wlp9s0}   
+↑ ${upspeedf wlx503eaaab9391} kb/s $alignr ${totalup wlx503eaaab9391}
+${voffset -14}$alignc${upspeedgraph wlx503eaaab9391 10,120 000000 aaddff}
+↓ ${downspeedf wlx503eaaab9391} kb/s $alignr ${totaldown wlx503eaaab9391}
+${voffset -14}$alignc${downspeedgraph wlx503eaaab9391 10,120 000000 66aaff}
+
+# HDD
+${voffset -8}${font Open Sans:Bold:size=10}${color orange}DISCS ${hr 5}
+$color${font Noto Sans:size=8}ROOT$font${alignc -20}${fs_used /} / ${fs_size /}$alignr ${fs_type /}
+${color aaddff}write: ${diskio_write /dev/sda}${color 66aaff}${alignc -20} read:${diskio_read /dev/sda} $color$alignr ${fs_used_perc /} %
+${fs_bar /}
+$color${font Noto Sans:size=8}DATA$font${alignc -20}${fs_used /media/DATA} / ${fs_size /media/DATA}$alignr ${fs_type /media/DATA}
+${color aaddff}write: ${diskio_write /dev/sdb}${color 66aaff}${alignc -20} read:${diskio_read /dev/sdb} $color$alignr ${fs_used_perc /media/DATA} %
+${fs_bar /media/DATA}
+
+# UPDATES
+#${voffset -8}${font Open Sans:Bold:size=10}${color orange}UPDATES ${hr 5}
+#$color${font Noto Sans:size=8}${execpi 1600 checkupdates | wc -l}
